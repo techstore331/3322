@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TECH_STORE_33 — Showcase</title>
+  <style>
+    :root{
+      --accent:#4f46e5; --muted:#6b7280; --bg:#f8fafc;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial; margin:0;color:#0b1220;background:var(--bg);}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .site-header{background:#fff;border-bottom:1px solid #e6e6f0}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:700;color:#111;text-decoration:none}
+    .logo{background:var(--accent);color:#fff;padding:.4rem .6rem;border-radius:.5rem;font-weight:800}
+    nav.nav{display:flex;gap:1rem;align-items:center}
+    nav.nav a{color:var(--muted);text-decoration:none;padding:.5rem;border-radius:.35rem}
+    nav.nav a:hover{color:var(--accent)}
+    nav.nav a.cta{background:var(--accent);color:#fff;padding:.45rem .7rem}
+    nav.nav a.active{color:var(--accent);font-weight:600;background:rgba(79,70,229,.06)}
+    .nav-toggle{display:none;background:none;border:1px solid #ddd;padding:.3rem .6rem;border-radius:.25rem}
+    main{padding-bottom:2.5rem}
+    .hero{padding:2.5rem 0;background:linear-gradient(90deg, rgba(79,70,229,0.9), rgba(6,182,212,0.9));color:white}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:1.5rem;align-items:center}
+    .hero h1{font-size:2rem;margin:0}
+    .lead{opacity:.95}
+    .hero-image img{width:100%;border-radius:.6rem;box-shadow:0 10px 30px rgba(2,6,23,.2)}
+    .btn{background:white;color:var(--accent);padding:.6rem 1rem;border-radius:.45rem;text-decoration:none;font-weight:700;display:inline-block}
+    .btn.outline{background:transparent;border:2px solid rgba(255,255,255,.18);color:white}
+    .section{padding:1.5rem 0}
+    .grid{display:grid;gap:1rem}
+    .cols-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .cols-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:white;border:1px solid #eee;padding:1rem;border-radius:.6rem}
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:.4rem}
+    .muted{color:var(--muted)}
+    .meta{margin-top:.5rem;color:#111}
+    .controls{display:flex;gap:.6rem;align-items:center;padding-bottom:1rem}
+    .controls input,.controls select{padding:.5rem;border:1px solid #ddd;border-radius:.4rem}
+    .products-list .card{padding:0}
+    .products-list .card img{height:160px}
+    .page-header{padding:1rem 0}
+    .site-footer{background:#fff;border-top:1px solid #e6e6f0;padding:1rem 0;margin-top:2rem}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .footer-links a{margin-left:1rem;color:var(--muted);text-decoration:none}
+    form input, form textarea{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:.4rem}
+    .form-actions{margin-top:.8rem;display:flex;gap:.5rem}
+    .hidden{display:none}
+    .text-center{text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero-grid{grid-template-columns:1fr}
+      nav.nav{display:none}
+      .nav-toggle{display:block}
+      .footer-grid{flex-direction:column;gap:.5rem}
+    }
+    @media (max-width:520px){
+      .controls{flex-direction:column;align-items:stretch}
+    }
+
+    /* small touches */
+    .muted-small{color:var(--muted);font-size:.95rem}
+    .search-inline{display:flex;gap:.5rem;align-items:center}
+    .badge{background:rgba(79,70,229,.1);color:var(--accent);padding:.2rem .5rem;border-radius:999px;font-weight:600;font-size:.85rem}
+    .read-more{display:inline-block;margin-top:.5rem;color:var(--accent);text-decoration:none}
+    .center-box{max-width:900px;margin:0 auto}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#home"><span class="logo">TS33</span> TECH_STORE_33</a>
+      <nav class="nav" id="mainNav">
+        <a href="#home" data-route>Home</a>
+        <a href="#products" data-route>Products</a>
+        <a href="#services" data-route>Services</a>
+        <a href="#blog" data-route>Blog</a>
+        <a href="#about" data-route>About</a>
+        <a href="#contact" class="cta" data-route>Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="page-home" class="page section">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1>TECH_STORE_33</h1>
+            <p class="lead">Curated electronics & services — clear advice, vetted products, optional local support.</p>
+            <p style="margin-top:1rem">
+              <a class="btn" href="#products" data-route>Explore Products</a>
+              <a class="btn outline" href="#services" data-route style="margin-left:.5rem">View Services</a>
+            </p>
+          </div>
+          <div class="hero-image">
+            <img alt="tech showcase" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60">
+          </div>
+        </div>
+      </div>
+
+      <div class="container section">
+        <h2>Featured Products</h2>
+        <div class="grid cols-3" id="homeFeatured">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="container section">
+        <h2>Services Overview</h2>
+        <div class="grid cols-3">
+          <div class="card"><h4>Installation</h4><p class="muted">Professional setup for AV, smart home, and more.</p></div>
+          <div class="card"><h4>Extended Warranty</h4><p class="muted">Flexible warranty options for hardware and service add-ons.</p></div>
+          <div class="card"><h4>On-site Support</h4><p class="muted">Local technicians for troubleshooting and repairs.</p></div>
+        </div>
+      </div>
+
+      <div class="container section">
+        <div class="card center-box" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+          <div>
+            <h3>Stay in the loop</h3>
+            <p class="muted">Get product drops, write-ups, and service offers.</p>
+          </div>
+          <form id="newsletterForm" style="display:flex;gap:.5rem;align-items:center">
+            <input id="newsletterEmail" type="email" placeholder="Your email" required>
+            <button class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="page-products" class="page section hidden">
+      <div class="container">
+        <div class="page-header">
+          <h1>Products</h1>
+          <p class="muted">Browse our curated selection of electronics and accessories.</p>
+        </div>
+
+        <div class="controls">
+          <div style="flex:1">
+            <input id="productSearch" placeholder="Search products, e.g., 'drone'">
+          </div>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            <option>Audio</option>
+            <option>Wearables</option>
+            <option>Home</option>
+            <option>Accessories</option>
+            <option>Gadgets</option>
+          </select>
+          <select id="sortBy">
+            <option value="relevance">Relevance</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </div>
+
+        <section id="productGrid" class="grid cols-3 products-list">
+          <!-- Filled by JS -->
+        </section>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="page-services" class="page section hidden">
+      <div class="container">
+        <div class="page-header">
+          <h1>Services</h1>
+          <p class="muted">Complementary offerings to make your tech work better for you.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card">
+            <h3>Installation & Setup</h3>
+            <p class="muted">In-person or remote setup for home theatre, smart home devices, and more.</p>
+            <ul class="muted-small">
+              <li>On-site AV installation</li>
+              <li>Smart home integration</li>
+              <li>Initial configuration & testing</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Extended Warranty</h3>
+            <p class="muted">Flexible warranty options for hardware and service add-ons.</p>
+            <ul class="muted-small">
+              <li>1-3 year plans</li>
+              <li>Preferential repair service</li>
+              <li>Parts and labor coverage</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>On-site Support</h3>
+            <p class="muted">Local technicians for diagnostics, repairs, and upgrades.</p>
+            <ul class="muted-small">
+              <li>Diagnostics & repairs</li>
+              <li>Hardware upgrades</li>
+              <li>Preventative maintenance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="card">
+            <h3>How it works</h3>
+            <ol class="muted-small">
+              <li>Tell us what you need via the contact form.</li>
+              <li>Get a clear quote with service options.</li>
+              <li>Approve the quote and set an appointment.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="page-blog" class="page section hidden">
+      <div class="container">
+        <div class="page-header">
+          <h1>Blog & News</h1>
+          <p class="muted">Tips, product roundups, and announcements.</p>
+        </div>
+
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Top 5 portable chargers for travel (2025)</h3>
+            <p class="muted">A concise guide to choosing high-capacity, fast-charging power banks.</p>
+            <a class="read-more" href="#">Read more →</a>
+          </article>
+
+          <article class="card">
+            <h3>Setting up a compact home theatre on a budget</h3>
+            <p class="muted">How to get the best picture and sound without overspending.</p>
+            <a class="read-more" href="#">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="page-about" class="page section hidden">
+      <div class="container">
+        <div class="page-header">
+          <h1>About TECH_STORE_33</h1>
+          <p class="muted">We curate electronics and services so you can buy confidently.</p>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card"><h3>Our mission</h3><p class="muted">Make buying tech simple and confident through honest curation and practical guides.</p></div>
+          <div class="card"><h3>Our promise</h3><p class="muted">Transparent information, vetted products, and optional service add-ons.</p></div>
+          <div class="card"><h3>Contact</h3><p class="muted">sales@techstore33.example</p></div>
+        </div>
+
+        <div class="section">
+          <div class="card">
+            <h3>Who we are</h3>
+            <p class="muted">TECH_STORE_33 began as a small team of tech enthusiasts and consultants. We review products, write clear buying advice, and offer service packages for customers who want installation & local support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="page-contact" class="page section hidden">
+      <div class="container">
+        <div class="page-header">
+          <h1>Contact</h1>
+          <p class="muted">Questions about a product or service? Send us a message.</p>
+        </div>
+
+        <div class="grid cols-2 contact-grid">
+          <div>
+            <form id="contactForm">
+              <label>Name</label>
+              <input id="c_name" type="text" required>
+
+              <label style="margin-top:.6rem">Email</label>
+              <input id="c_email" type="email" required>
+
+              <label style="margin-top:.6rem">Message</label>
+              <textarea id="c_message" rows="6" required></textarea>
+
+              <div class="form-actions">
+                <button class="btn" type="submit">Send message</button>
+                <button class="btn outline" type="reset">Reset</button>
+              </div>
+            </form>
+          </div>
+          <aside>
+            <div class="card">
+              <h3>Contact details</h3>
+              <p class="muted">Email: kipyegonbenedict@gmail.com</p>
+              <p class="muted">Phone: +254 (707) 492-205</p>
+              <p class="muted">Location: Remote / Local partners</p>
+            </div>
+
+            <div class="card">
+              <h3>Request a quote</h3>
+              <p class="muted">Mention the product and service you need, and we'll get back with a clear quote.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>TECH_STORE_33</strong>
+        <div class="muted">Curated electronics & services</div>
+        <div class="muted">© <span id="year">2025</span> TECH_STORE_33</div>
+      </div>
+      <div class="footer-links">
+        <a href="#about" data-route>About</a>
+        <a href="#contact" data-route>Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    // Product data
+    const PRODUCTS = [
+      {id:'p1',name:'Aurora Noise-Cancelling Headphones',category:'Audio',price:199,rating:4.6,img:'https://images.unsplash.com/photo-1518444029130-8de29f4b0b1b?auto=format&fit=crop&w=800&q=60',short:'Comfortable ANC headphones with rich sound.'},
+      {id:'p2',name:'Pulse Smartwatch Pro',category:'Wearables',price:149,rating:4.3,img:'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=60',short:'Advanced fitness tracking and notifications.'},
+      {id:'p3',name:'Vivid 4K Streaming Stick',category:'Home',price:59,rating:4.1,img:'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=60',short:'Turn any TV into a smart 4K streaming center.'},
+      {id:'p4',name:'Flux Portable Charger 20k',category:'Accessories',price:39,rating:4.4,img:'https://images.unsplash.com/photo-1515176735179-9c2a6f74a1b9?auto=format&fit=crop&w=800&q=60',short:'Slim high-capacity powerbank with USB-C PD.'},
+      {id:'p5',name:'Nebula Compact Drone',category:'Gadgets',price:299,rating:4.7,img:'https://images.unsplash.com/photo-1508610048659-a06f90f8d6f6?auto=format&fit=crop&w=800&q=60',short:'Foldable drone with 4K camera and stabilization.'}
+    ];
+
+    // Simple router: show section matching hash (#home, #products, etc.)
+    const pages = Array.from(document.querySelectorAll('.page'));
+    function showPage(hash){
+      const id = (hash || '#home').replace('#','');
+      pages.forEach(p => p.id === 'page-'+id ? p.classList.remove('hidden') : p.classList.add('hidden'));
+      // set active nav link
+      document.querySelectorAll('nav.nav a').forEach(a => {
+        if(a.getAttribute('href') === '#'+id) {
+          a.classList.add('active');
+        } else a.classList.remove('active');
+      });
+      // When navigating to products, ensure grid renders
+      if(id === 'products') renderProducts();
+    }
+    window.addEventListener('hashchange', ()=> showPage(location.hash || '#home'));
+    // initial
+    showPage(location.hash || '#home');
+
+    // Nav toggle for small screens
+    const navToggle = document.getElementById('navToggle');
+    navToggle && navToggle.addEventListener('click', ()=>{
+      const nav = document.getElementById('mainNav');
+      if(!nav) return;
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.background = '#fff';
+      nav.style.padding = '0.5rem';
+      nav.style.position = 'absolute';
+      nav.style.right = '1rem';
+      nav.style.top = '64px';
+      nav.style.border = '1px solid #eee';
+      nav.style.borderRadius = '.4rem';
+    });
+
+    // render featured on home
+    const homeFeatured = document.getElementById('homeFeatured');
+    if(homeFeatured){
+      const featured = PRODUCTS.slice(0,3);
+      featured.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = '<img src="'+p.img+'" alt="'+escapeHTML(p.name)+'"><h3 style="margin:.5rem 0">'+escapeHTML(p.name)+'</h3><p class="muted">'+escapeHTML(p.short)+'</p><div class="meta">$'+p.price+' · ★ '+p.rating+'</div>';
+        homeFeatured.appendChild(el);
+      });
+    }
+
+    // Product rendering and filters
+    const productGrid = document.getElementById('productGrid');
+    const productSearch = document.getElementById('productSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const sortBy = document.getElementById('sortBy');
+
+    function escapeHTML(s){ return String(s).replace(/[&<>"']/g, c=>'&#'+c.charCodeAt(0)+';'); }
+
+    function renderProducts(){
+      if(!productGrid) return;
+      let items = PRODUCTS.slice();
+      // apply filters from inputs
+      const q = productSearch ? productSearch.value.trim().toLowerCase() : '';
+      const cat = categoryFilter ? categoryFilter.value : 'all';
+      const s = sortBy ? sortBy.value : 'relevance';
+      if(q) items = items.filter(i => i.name.toLowerCase().includes(q) || i.short.toLowerCase().includes(q));
+      if(cat && cat !== 'all') items = items.filter(i => i.category === cat);
+      if(s === 'price_asc') items.sort((a,b)=>a.price-b.price);
+      if(s === 'price_desc') items.sort((a,b)=>b.price-a.price);
+      if(s === 'rating') items.sort((a,b)=>b.rating-b.rating?b.rating-a.rating:0);
+      productGrid.innerHTML = '';
+      if(items.length === 0){
+        productGrid.innerHTML = '<div class="card">No products found.</div>'; return;
+      }
+      items.forEach(p=>{
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = '<img src="'+p.img+'" alt="'+escapeHTML(p.name)+'"><div style="padding:.6rem"><h3 style="margin:.2rem 0">'+escapeHTML(p.name)+'</h3><p class="muted">'+escapeHTML(p.short)+'</p><div class="meta">$'+p.price+' · ★ '+p.rating+'</div></div>';
+        productGrid.appendChild(el);
+      });
+    }
+
+    // attach filter events
+    if(productSearch) productSearch.addEventListener('input', renderProducts);
+    if(categoryFilter) categoryFilter.addEventListener('change', renderProducts);
+    if(sortBy) sortBy.addEventListener('change', renderProducts);
+
+    // newsletter demo
+    const nl = document.getElementById('newsletterForm');
+    if(nl) nl.addEventListener('submit', function(e){
+      e.preventDefault();
+      const em = document.getElementById('newsletterEmail');
+      alert('Thanks — (demo) we will send updates to ' + (em?em.value:'your email'));
+      em && (em.value = '');
+    });
+
+    // contact demo
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const n = document.getElementById('c_name').value || 'friend';
+      alert('Thanks '+ n + '! We received your message (demo).');
+      contactForm.reset();
+      // optionally switch to home after send
+      location.hash = '#home';
+    });
+
+    // set year
+    const y = document.getElementById('year');
+    if(y) y.textContent = new Date().getFullYear();
+
+    // small helper: escape HTML used above
+  })();
+  </script>
+</body>
+</html>
